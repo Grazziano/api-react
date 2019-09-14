@@ -1,0 +1,53 @@
+.table-action {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-action img {
+    width: 200px;
+    height: 120px;
+}
+
+@media screen and (max-width:480px) {
+    .table-action img {
+        width: 120px;
+        height: 80px;
+    }
+
+    .table-action thead {
+        display: none;
+    }
+
+    .table-action td {
+        border: 0;
+    }
+
+    .table-action td:not(:first-child) {
+        display: block;
+        height: 25px;
+    }
+
+    .table-action td:nth-child(2)::before {
+        content: 'Modelo:';
+    }
+
+    .table-action td:nth-child(3)::before {
+        content: 'Marca:';
+    }
+
+    .table-action td:nth-child(4)::before {
+        content: 'Ano:';
+    }
+
+    .table-action td:nth-child(5)::before {
+        content: 'Preço:';
+    }
+
+    .table-action td::before {
+        font-weight: bold;
+        color: blue;
+        display: inline-block;
+        width: 70px;
+    }
+}
