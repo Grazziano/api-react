@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const ItemLista = props => {
   return (
@@ -12,7 +13,17 @@ const ItemLista = props => {
       <td>{props.ano}</td>
       <td>{Number(props.preco)
            .toLocaleString("pt-br", {style: 'currency', currency: 'BRL'})}</td>
-      <td> </td>     
+      <td>
+        <button className="btn btn-sm btn-warning mr-1" onClick={(e) => props.alterar(props.id, e)}>
+          <i className="far fa-edit"></i> R$
+        </button>
+        <button className="btn btn-sm btn-danger mr-1" 
+                onClick={(e) => window.confirm(`Confirma a exclusão do ${props.modelo}?`)
+                && props.excluir(props.id, e)}>
+          Excluir
+        </button>
+        <Link to={`/editar/${props.id}`} className="btn btn-sm btn-info"> Editar </Link>      
+      </td>     
     </tr>
   )
 }

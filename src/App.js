@@ -7,6 +7,7 @@ import Home from './Home'
 import Listagem from './Listagem'
 import FormIncluir from './FormIncluir'
 import FormPesquisar from './FormPesquisar'
+import Editar from './Editar'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path='/listar' component={Listagem} />
       <Route path='/incluir' component={FormIncluir} />
       <Route path='/pesquisar' component={FormPesquisar} />
+      <Route path='/editar/:id' component={Editar} />
     </Router>
   );
 }
